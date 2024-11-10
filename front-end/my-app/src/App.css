@@ -1,0 +1,87 @@
+/* Main container for the app layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f8;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 200px; /* Fixed width for sidebar */
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar button styling */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-btn:hover,
+.sidebar-btn.active {
+  background-color: #34495e;
+}
+
+/* Main content layout */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* File list section: occupies more space */
+.file-list-section {
+  flex: 3;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+}
+
+/* Chat section */
+.chat-section {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .file-list-section,
+  .chat-section {
+    flex: 1;
+    padding: 15px;
+  }
+}
