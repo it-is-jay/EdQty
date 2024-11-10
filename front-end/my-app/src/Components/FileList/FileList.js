@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './FileList.css';
 
 const FileList = () => {
@@ -6,8 +7,8 @@ const FileList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const navigate = useNavigate(); // React Router's hook to programmatically navigate
 
-  // Fetch initial list of file names
   useEffect(() => {
     fetchFileList();
   }, []);
@@ -16,7 +17,7 @@ const FileList = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://172.20.10.5:5000/api/listfiles`);
+      const response = await fetch('http://127.0.0.1:5000/api/listfiles');
       const data = await response.json();
       setFiles(data.files || []);
     } catch (err) {
@@ -25,25 +26,9 @@ const FileList = () => {
     setLoading(false);
   };
 
-  const handleFileClick = async (fileName) => {
-    try {
-      const response = await fetch(`http://172.20.10.5:5000/api/select-file`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ filename: fileName }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      console.log('File details:', data);
-    } catch (err) {
-      console.error('Failed to fetch file details:', err);
-    }
+  const handleFileClick = (fileName) => {
+    // Navigate to PDF viewer and pass the filename as state
+    navigate('/pdfviewer', { state: { fileName } });
   };
 
   const handleUpload = async (event) => {
@@ -55,7 +40,7 @@ const FileList = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch(`http://172.20.10.5:5000/api/upload`, {
+      const response = await fetch(`http://127.0.0.1:5000/api/upload`, {
         method: 'POST',
         body: formData,
       });

@@ -1,0 +1,56 @@
+.pdf-viewer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-start;
+  }
+  
+  .pdf-document {
+    flex:1;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .chat-section {
+    flex: 1; /* Take available space */
+    max-width: 50%; /* Optional: Limit the width of the chat section */
+    overflow-y: auto; /* Ensure the chat section can scroll if it overflows */
+    float:right;
+    padding-left: 50px;
+  }
+  
+  .pdf-page {
+    flex:1;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    overflow: visible;
+  }
+  
+  .pdf-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .pdf-controls button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pdf-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pdf-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  

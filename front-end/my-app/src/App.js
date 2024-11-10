@@ -1,45 +1,50 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import ChatInterface from './Components/ChatInterface/ChatInterface';
-import FileList from './Components/FileList/FileList'; // Import modified ArchivePage
+import FileList from './Components/FileList/FileList';
+import PDFViewer from './Components/PDFPage/PDFViewer';
+import VideoViewer from './Components/VideoViewer/VideoViewer';
 
-const Sidebar = ({ setActivePage }) => {
-  return (
-    <div className="sidebar">
-      <div className="library-section">
-        <h2>Library</h2>
-        <button className="sidebar-btn active" onClick={() => setActivePage('archive')}>
-          <span role="img" aria-label="archive">📁</span> Data Lake
-        </button>
-      </div>
-      <div className="files-section">
-        <h2>Files</h2>
-        <button className="sidebar-btn" onClick={() => setActivePage('video')}>
-          <span role="img" aria-label="video">🎥</span> Accessibility tools
-        </button>
-      </div>
+const Sidebar = () => (
+  <div className="sidebar">
+    <div className="library-section">
+      <h2>Library</h2>
+      <Link to="/archive" className="sidebar-btn">
+        📁 Data Lake
+      </Link>
     </div>
-  );
-};
-
-const App = () => {
-  const [activePage, setActivePage] = useState('archive');
-
-  return (
-    <div className="app-container">
-      <Sidebar setActivePage={setActivePage} />
-      <div className="main-content">
-        <div className="chat-section">
-          <ChatInterface />
-        </div>
-        {activePage === 'archive' && (
-          <div className="file-list-section">
-            <FileList />
-          </div>
-        )}
-      </div>
+    <div className="files-section">
+      <h2>Files</h2>
+      <Link to="/pdfviewer" className="sidebar-btn">📄 PDF Viewer</Link>
+      <Link to="/text" className="sidebar-btn">📝 Text Viewer</Link>
+      <Link to="/video" className="sidebar-btn">🎥 Video Viewer</Link>
     </div>
-  );
-};
+  </div>
+);
+
+
+const TextPage = () => (
+  <div className="main-content non-centered-content">
+    <h1>Text History</h1>
+    <input type="text" placeholder="Search Text history..." className="search-bar" />
+  </div>
+);
+
+
+const App = () => (
+  <div className="app-container">
+    <Sidebar />
+    <div className="main-content">
+      <Routes>
+        <Route path="/archive" element={<FileList />} />
+        <Route path="/pdfviewer" element={<PDFViewer />} />
+        <Route path="/text" element={<TextPage />} />
+        <Route path="/video" element={<VideoViewer />} />
+        <Route path="/" element={<ChatInterface />} /> {/* Default route */}
+      </Routes>
+    </div>
+  </div>
+);
 
 export default App;

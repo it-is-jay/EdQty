@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between the components */
+  }
+  
+  .youtube-embed {
+    flex: 1; /* Take available space */
+    max-width: 60%; /* Optional: Limit the width of the iframe */
+  }
+  
+  .chat-section {
+    flex: 1; /* Take available space */
+    max-width: 50%; /* Optional: Limit the width of the chat section */
+    overflow-y: auto; /* Ensure the chat section can scroll if it overflows */
+    float:right;
+    padding-left: 50px;
+    height: 100%;
+  }
+  
+  /* Optional: You can add media queries to make the layout responsive */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: row; /* Stack the components on smaller screens */
+      align-items: center; /* Center align the components */
+    }
+  
+    .youtube-embed, .chat-section {
+      max-width: 100%; /* Allow components to take full width on small screens */
+    }
+  }
+
+  .buttons{
+    flex-direction: row;
+  }

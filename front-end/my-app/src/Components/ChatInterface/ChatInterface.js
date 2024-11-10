@@ -13,18 +13,39 @@ const ChatInterface = () => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, isBot: false }]);
       setInput("");
 
-      // Simulate bot response
-      setTimeout(() => {
-        setMessages(prevMessages => [
+      try {
+        // Send input to the API
+        const response = await fetch("http://127.0.0.1:5000/api/db-query", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ "query": input }),
+        });
+
+        // Check if the response is ok
+        if (response.ok) {
+          const data = await response.json();
+          // Assuming the response has a 'response' field
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { text: data.message, isBot: true },
+          ]);
+        } else {
+          throw new Error("Failed to fetch response from the server.");
+        }
+      } catch (error) {
+        // Handle error
+        setMessages((prevMessages) => [
           ...prevMessages,
-          { text: "This is a simulated response.", isBot: true }
+          { text: "Sorry, there was an error. Please try again.", isBot: true },
         ]);
-      }, 1000);
+      }
     }
   };
 
@@ -56,6 +77,23 @@ const ChatInterface = () => {
         <button onClick={handleSendMessage} className="send-button">
           Send
         </button>
+      </div>
+      <div>
+      <button className="buttons">
+          Summarize
+      </button>
+      <button className="buttons">
+          Translate
+      </button>
+      <button className="buttons">
+          Translate
+      </button>
+      <button className="buttons">
+          Translate
+      </button>
+      <button className="buttons">
+          Translate
+      </button>
       </div>
     </div>
   );

@@ -11,9 +11,7 @@ body {
 
 .app-container {
   display: flex;
-  flex-direction: row;
-  min-height: 100%;
-  flex:1;
+  min-height: 100vh;
 }
 
 /* Sidebar styles */
@@ -113,16 +111,15 @@ body {
    width :300px ;
 }
 
-/* Main content styles */
+/* Main content styles
 .main-content {
   flex-grow: 1;
-  padding: 40px;
-  min-height: 100vh;
-}
+  /* padding: 40px; */
+/* } */
 
-.main-content h1 {
+/* .main-content h1 {
   font-size: 24px;
-} 
+}  */
 
 .centered-content {
   
