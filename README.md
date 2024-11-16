@@ -12,7 +12,7 @@ Making learning personal, accessible, and inclusive across learning disabilities
 ---
 
 ## 📹 Demo and Submission Links
-- **[YouTube Demo](https://www.youtube.com/watch?v=TsOh2q6WZTE&t=16s)**  
+- **[YouTube Demo](https://www.youtube.com/watch?v=TsOh2q6WZTE&t)**  
 - **[Hackathon Submission](https://devpost.com/software/bridge2learn)**  
 
 ## 🚀 Inspiration
