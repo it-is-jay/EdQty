@@ -2,8 +2,6 @@
 
 Making learning personal, accessible, and inclusive across learning disabilities and language barriers. Interacting with learning material, supporting academics, social interactions, and daily life.
 
----
-
 ## 🛠️ Built With
 - **Frontend:** React, CSS  
 - **Backend:** Flask  
@@ -106,7 +104,7 @@ For our demo, we combined the power of modern AI with robust frameworks:
 
 ## 🔮 What's Next for EdQty
 The MVP is just the beginning. Here's what we envision:
-- **Enhanced Cultural Translations:**  
+- **Enhanced Cultural and Social Interaction features:**  
   Improve accuracy to resonate with a diverse global audience.
   
 - **Interactive Features:**  
@@ -129,7 +127,7 @@ To explore or contribute to EdQty, clone this repository and follow the setup in
 - Node.js  
 - Python 3  
 - MongoDB Atlas account  
-- API keys for LLaMA 3.2, Whisper, and Ollama  
+- API keys for LLaMA 3.2 or any LLM / Meta Llama 3.2 set up locally using Ollama  
 
 ### Installation
 1. Clone the repo:  
@@ -140,10 +138,13 @@ To explore or contribute to EdQty, clone this repository and follow the setup in
 2. Install dependencies:
 
 Frontend:
+
     ```bash
     cd frontend
     npm install
+
 Backend:
+
     ```bash
     cd backend
     pip install -r requirements.txt
@@ -154,6 +155,4 @@ Backend:
 
     ```bash
     python app.py
-
-    ```bash
     npm start
