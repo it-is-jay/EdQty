@@ -143,14 +143,6 @@ Frontend:
     ```bash
     cd frontend
     npm install
-    ```
-
-Backend:
-
-    ```bash
-    cd backend
-    pip install -r requirements.txt
-    ```
 
 3. Configure environment variables for API keys and MongoDB.
 
