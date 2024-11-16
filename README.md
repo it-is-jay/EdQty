@@ -13,9 +13,7 @@ Making learning personal, accessible, and inclusive across learning disabilities
 
 ## 📹 Demo and Submission Links
 - **[YouTube Demo](https://www.youtube.com/watch?v=TsOh2q6WZTE&t=16s)**  
-- **[Hackathon Submission]([https://hackathon-submission-link](https://devpost.com/software/bridge2learn))**  
-
----
+- **[Hackathon Submission](https://devpost.com/software/bridge2learn)**  
 
 ## 🚀 Inspiration
 As international students, we've faced language barriers that often hinder understanding core concepts. A single unfamiliar term during a lecture can derail comprehension entirely. For students with learning disabilities like dyslexia or ADHD, the challenges are even more pronounced—long lectures and complex readings can feel insurmountable.  
