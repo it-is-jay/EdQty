@@ -41,6 +41,41 @@ def translate_output(out):
     else:
         return out
 
+@app.route('/api/tts', methods=['GET'])
+def tts():
+    with open("transcription.txt", encoding="utf-8") as file:
+        transcription = file.read()
+    text_to_speech(transcription)
+    return jsonify({"message":"output_saved"})
+
+@app.route('/api/highlight', methods=['GET'])
+def highlight():
+    with open("transcription.txt", encoding="utf-8") as file:
+        transcription = file.read()
+    out = highlight_keywords(transcription)
+    return jsonify({"message":out})
+
+@app.route('/api/timestamp', methods=['POST'])
+def timestamp():
+    query = request.get_json().get('query')
+    out = timestamp_localization(query)
+    return jsonify({"message":out})
+    
+@app.route('/api/simplify', methods=['POST'])
+def simplify():
+    language = request.get_json().get('language')
+    with open("transcription.txt", encoding="utf-8") as file:
+        transcription = file.read()
+    out = simplify_content(transcription, language)
+    return jsonify({"message":out})
+
+@app.route('/api/captioning', methods=['GET'])
+def caption():
+    with open("transcription.txt", encoding="utf-8") as file:
+        transcription = file.read()
+    video_captioning(transcription)
+    return jsonify({"message":"output saved as captions.srt"})
+
 @app.route('/api/select-file', methods=['POST'])
 def download_file():
     filename = request.get_json().get('filename')
@@ -55,6 +90,7 @@ def download_file():
             with open("transcription.txt", "wb") as output_file:
                 output_file.write(file_data.read())
         else: 
+            print(filename)
             transcribe(filename)
 
     except Exception as e:
@@ -101,7 +137,7 @@ def prompt_video():
 @app.route('/api/translate-transcript', methods=['POST'])
 def translate_transcript():
     data = request.get_json()  # Assume JSON format
-    with open("transcription.txt") as file:
+    with open("transcription.txt", encoding="utf-8") as file:
         transcription = file.read()
     language = data.get("language")
     # Check if the URL was provided
@@ -116,26 +152,34 @@ def change_language():
 
 @app.route('/api/summarize-transcript', methods=['GET'])
 def summarize_transcript():
-    with open("transcription.txt") as file:
+    with open("transcription.txt", encoding="utf-8") as file:
         transcription = file.read()
     # Check if the URL was provided
     out = summarize_text(transcription)
     return jsonify({"message": out})
 
+@app.route('/api/keyword', methods=['GET'])
+def keywords():
+    with open("transcription.txt", encoding="utf-8") as file:
+        transcription = file.read()
+    # Check if the URL was provided
+    out = highlight_keywords(transcription)
+    return jsonify({"message": out})
+
 @app.route('/api/summarize-text', methods=['POST'])
-def summarize_text():
+def summarize_prompting():
     data = request.get_json()  # Assume JSON format
     content = request.get("content")
     out = summarize_text(content)
     return jsonify({"message": out})
 
-@app.route('/api/simplify-text', methods=['POST'])
-def simplify():
-    data = request.get_json()  # Assume JSON format
-    content = request.get("content")
-    language = request.get("language")
-    out = simplify_content(content, language)
-    return jsonify({"message": out})
+# @app.route('/api/simplify-text', methods=['POST'])
+# def simplify():
+#     data = request.get_json()  # Assume JSON format
+#     content = request.get("content")
+#     language = request.get("language")
+#     out = simplify_content(content, language)
+#     return jsonify({"message": out})
 
 @app.route('/api/transcribe-url', methods=['POST'])
 def transcribe_url():

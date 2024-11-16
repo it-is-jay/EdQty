@@ -96,10 +96,16 @@ def highlight_keywords(text):
             "text": text,
         }
     )
+
+def format_timestamp(seconds):
+    """Convert seconds to SRT timestamp format: HH:MM:SS,mmm."""
+    td = timedelta(seconds=float(seconds))
+    return str(td)[:-3].replace(".", ",")
     
 def timestamp_localization(query):
+    print("stamping")
     timestamp_prompt = ChatPromptTemplate.from_template(
-    "At what timestamp does {query} appear. Output format: HH:MM:SS. Use the data below:\n{text}"
+    "At what timestamp does {query} appear. Choose the timestamp from the timestamps in the transcript below: {text}"
     )
     
     timestamp_chain = (
@@ -114,7 +120,6 @@ def timestamp_localization(query):
         }
     )
     
-
 def get_embedding(text):
     embedded_query = embeddings.embed_query(text)
     print(f"Embedding length: {len(embedded_query)}")
@@ -153,10 +158,7 @@ def translate_content(context, language):
         }
     )
 
-def format_timestamp(seconds):
-    """Convert seconds to SRT timestamp format: HH:MM:SS,mmm."""
-    td = timedelta(seconds=float(seconds))
-    return str(td)[:-3].replace(".", ",")
+
 
 def video_captioning(transcription_file="transcription.txt", output_file="captions.srt"):
     with open(transcription_file, "r") as f:
@@ -247,7 +249,7 @@ def transcription_promting(query, llama_model):
     
     
     chain = llama_model | parser
-    with open("transcription.txt") as file:
+    with open("transcription.txt", encoding="utf-8") as file:
         transcription = file.read()
 
     try:
