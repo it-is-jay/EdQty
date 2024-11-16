@@ -5,11 +5,12 @@ import ChatInterface from './Components/ChatInterface/ChatInterface';
 import FileList from './Components/FileList/FileList';
 import PDFViewer from './Components/PDFPage/PDFViewer';
 import VideoViewer from './Components/VideoViewer/VideoViewer';
+import TextViewer from './Components/TextViewer/TextViewer';
 
 const Sidebar = () => (
   <div className="sidebar">
     <div className="library-section">
-      <h2>Library</h2>
+      <h2>EdQty</h2>
       <Link to="/archive" className="sidebar-btn">
         📁 Data Lake
       </Link>
@@ -39,7 +40,7 @@ const App = () => (
       <Routes>
         <Route path="/archive" element={<FileList />} />
         <Route path="/pdfviewer" element={<PDFViewer />} />
-        <Route path="/text" element={<TextPage />} />
+        <Route path="/text" element={<TextViewer />} />
         <Route path="/video" element={<VideoViewer />} />
         <Route path="/" element={<ChatInterface />} /> {/* Default route */}
       </Routes>

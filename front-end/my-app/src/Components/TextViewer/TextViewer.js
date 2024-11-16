@@ -6,7 +6,7 @@ import ChatInterface from '../ChatInterface/ChatInterface';
 const PDFViewer = () => {
   return (
     <div className="pdf-viewer-container">
-        <div style={{ flex: 1, width: '100%', height: '100vh', overflow: 'auto' }}>
+        <div style={{ flex: 1, width: '600px', height: '100vh', overflow: 'auto' }}>
         <pre
     style={{
       whiteSpace: 'pre-wrap',   // Wrap long lines

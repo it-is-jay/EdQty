@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatInterface from './../ChatInterface/ChatInterface';
 import './VideoViewer.css'
-const YouTubeEmbed = ({ videoId, width = "800", height = "450" }) => {
+const YouTubeEmbed = ({ videoId, width = "700", height = "394" }) => {
   const embedUrl = 'https://www.youtube.com/embed/2IK3DFHRFfw'; // Replace with your video ID
 
   return (

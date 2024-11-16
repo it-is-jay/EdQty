@@ -49,6 +49,140 @@ const ChatInterface = () => {
     }
   };
 
+  const handleSummarize = async () => {
+    try {
+      // Send input to the API
+      const response = await fetch("http://127.0.0.1:5000/api/summarize-transcript");
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the response has a 'response' field
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: data.message, isBot: true },
+        ]);
+      } else {
+        throw new Error("Failed to fetch response from the server.");
+      }
+    } catch (error) {
+      // Handle error
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, there was an error. Please try again.", isBot: true },
+      ]);
+    }
+  };
+
+  const handleTranslate = async () => {
+    try {
+      // Send input to the API
+      const response = await fetch("http://127.0.0.1:5000/api/translate-transcript", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "language": "chinese"}),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the response has a 'response' field
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: data.message, isBot: true },
+        ]);
+      } else {
+        throw new Error("Failed to fetch response from the server.");
+      }
+    } catch (error) {
+      // Handle error
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, there was an error. Please try again.", isBot: true },
+      ]);
+    }
+  };
+  const handleTimestamp = async () => {
+    try {
+      // Send input to the API
+      const response = await fetch("http://127.0.0.1:5000/api/timestamp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "query": input}),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the response has a 'response' field
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: data.message, isBot: true },
+        ]);
+      } else {
+        throw new Error("Failed to fetch response from the server.");
+      }
+    } catch (error) {
+      // Handle error
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, there was an error. Please try again.", isBot: true },
+      ]);
+    }
+  };
+  const handleCaption = async () => {
+    try {
+      // Send input to the API
+      const response = await fetch("http://127.0.0.1:5000/api/captioning", {
+        method: "GET"
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the response has a 'response' field
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: data.message, isBot: true },
+        ]);
+      } else {
+        throw new Error("Failed to fetch response from the server.");
+      }
+    } catch (error) {
+      // Handle error
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, there was an error. Please try again.", isBot: true },
+      ]);
+    }
+  };
+  const handleKeywords = async () => {
+    try {
+      // Send input to the API
+      const response = await fetch("http://127.0.0.1:5000/api/keyword", {
+        method: "GET"
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the response has a 'response' field
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: data.message, isBot: true },
+        ]);
+      } else {
+        throw new Error("Failed to fetch response from the server.");
+      }
+    } catch (error) {
+      // Handle error
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, there was an error. Please try again.", isBot: true },
+      ]);
+    }
+  };
+  
+
   return (
     <div className="chat-container">
       {/* Message display area */}
@@ -79,21 +213,30 @@ const ChatInterface = () => {
         </button>
       </div>
       <div>
-      <button className="buttons">
+      <button onClick={handleSummarize} className="buttons">
           Summarize
       </button>
-      <button className="buttons">
+      <button onClick={handleTranslate} className="buttons">
           Translate
       </button>
-      <button className="buttons">
-          Translate
+      <button onClick={handleTimestamp} className="buttons">
+          Timestamp
+      </button>
+      <button onClick={handleCaption} className="buttons">
+          Caption
+      </button>
+      <button onClick={handleKeywords} className="buttons">
+          Keywords
+      </button>
+       {/* <button onClick={handleTimestamp} className="buttons">
+          Keywords
+      </button>
+      <button onClick={handleCaption} className="buttons">
+          Find
       </button>
       <button className="buttons">
-          Translate
-      </button>
-      <button className="buttons">
-          Translate
-      </button>
+          Read it out
+      </button> */}
       </div>
     </div>
   );
