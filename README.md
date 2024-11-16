@@ -138,20 +138,16 @@ To explore or contribute to EdQty, clone this repository and follow the setup in
 2. Install dependencies:
 
 Frontend:
-
-    ```bash
     cd frontend
     npm install
 
 Backend:
-
-    ```bash
     cd backend
     pip install -r requirements.txt
 
-3. Configure environment variables for API keys and MongoDB.
+1. Configure environment variables for API keys and MongoDB.
 
-4. Start the app:
+2. Start the app:
 
     ```bash
     python app.py
