@@ -1,52 +1,159 @@
-EdQty is your Gateway to Limitless Learning.
+# EdQty: Your Gateway to Limitless Learning 🌐📚
 
-As international students, we often encounter language barriers that can drastically impact our understanding of core concepts. Imagine starting a lecture and stumbling over a single unfamiliar term; that one word can make it challenging to follow the entire session. For students with learning disabilities, these obstacles are compounded—focusing through lengthy lectures or deciphering complex readings becomes an even greater struggle.
+Making learning personal, accessible, and inclusive across learning disabilities and language barriers. Interacting with learning material, supporting academics, social interactions, and daily life.
 
-These shared experiences inspired us to reimagine the learning process through a tool designed to be more interactive and accessible for everyone. EdQty aims to break down language boundaries and cater to diverse learning needs, offering real-time language support, engaging interactive features, and adaptive learning methods. Our mission is to empower every student—whether facing language barriers or learning challenges—to grasp concepts effectively and confidently.
+---
 
-Our vision is that academic progress should never be obstructed by linguistic difficulties or learning disabilities. EdQty enhances the learning experience, making it inclusive and supportive, promoting engagement and success for a diverse community of students.
+## 🛠️ Built With
+- **Frontend:** React, CSS  
+- **Backend:** Flask  
+- **Database:** MongoDB Atlas  
+- **AI Models:** LLaMA 3.2, OpenAI Whisper  
+- **Frameworks:** LangChain, Ollama  
 
-What It Does
-EdQty is a revolutionary learning tool crafted to dismantle educational barriers for international students and those with learning disabilities. By recognizing the unique challenges faced by students with dyslexia, ADHD, and non-native speakers, we designed our product to create a truly inclusive learning environment.
+---
 
-At the core of EdQty lies a suite of personalized features that redefine the learning journey. Our time-stamped video Q&A feature allows students to pause and engage with content at any point, promoting understanding through interaction. Integrated text-to-speech and visual aids cater to different learning styles, while an in-built knowledge base delivers context and clarity as needed. These features are designed to make learning accessible and tailored to individual needs.
+## 🚀 Inspiration
+As international students, we've faced language barriers that often hinder understanding core concepts. A single unfamiliar term during a lecture can derail comprehension entirely. For students with learning disabilities like dyslexia or ADHD, the challenges are even more pronounced—long lectures and complex readings can feel insurmountable.  
 
-But EdQty goes beyond simple language translation. Our tool embraces cultural diversity, supporting students in both academic and everyday settings. Whether students are trying to understand complex lecture material or navigate social interactions in a new cultural environment, EdQty equips them with the resources they need. Through confidence-building support and inclusive design, we aim to foster belonging and inclusion, creating a world where learning is a shared experience, accessible to all.
+These shared struggles inspired us to reimagine learning as an interactive and accessible experience for everyone. **EdQty** was born to break down language barriers and cater to diverse learning needs, empowering students to grasp concepts confidently and effectively.
 
-Key Features:
-Real-Time Multilingual Translation and Summarization: Instantly translates and summarizes content from various sources into the user's preferred language.
-Interactive AI Q&A for Deeper Understanding: Allows users to ask specific questions about content, request simplified explanations, and make connections across topics.
-Saved Database of Summaries and Notes: A personal repository for organizing and revisiting study materials.
-Enhanced Note-Taking and Annotation: Enables highlighting, personal note addition, and direct linking to specific materials.
-Daily Life Assistance: Offers real-time translations for menus, signs, and product labels, along with cultural insights to ease navigation in new environments.
-Time-Stamped Video Q&A: Enables interaction with video content at any specific point, enhancing engagement and understanding.
-How we built it
-For our Edqty demo, we leveraged generative AI models, including large language models (LLMs) like LLaMA for natural language processing and OpenAI's Whisper for accurate audio-to-text conversion. The LangChain framework supports workflow management and coordination between models, while Ollama enables efficient deployment and scaling. Together with a React-based front end and Flask back end, this setup creates a seamless, interactive experience that showcases Edqty's capabilities in delivering personalized, responsive learning support.
+Our vision is simple yet profound: academic progress should never be hindered by linguistic or learning challenges. EdQty fosters inclusivity and support, promoting engagement and success for a diverse student community.
 
-Challenges We Faced
-Our team embarked on this journey with a steep learning curve ahead: none of us had prior experience with React. Integrating the front-end and back-end required patience, determination, and a lot of Googling! The 24-hour hackathon format added a ticking clock to the mix, making every minute count. We quickly discovered that while our initial energy was high, the all-night coding and brainstorming took a toll. By midnight, our productivity began to dip, with fatigue setting in and focus becoming harder to maintain. Despite the exhaustion, we pushed through, relying on each other for encouragement and support, and taking brief moments to recharge before diving back into the code.
+---
 
-Accomplishments We’re Proud Of
-In the span of just 24 hours, we took our idea from a blank page to a working product that solves a real-life problem that resonated with all of us. We’re incredibly proud of not only building a functioning demo but doing so with a full-stack approach—seamlessly linking our front-end and back-end with interactive elements. None of us had done something like this before, so seeing our code come together into a working product felt like a huge accomplishment. We each had to learn on the spot, expanding our skills as we encountered new challenges. What we created wasn’t just a project; it was proof of what a team of beginners and intermediates can accomplish in a single day when we’re focused, driven, and willing to tackle the unknown.
+## 🎯 What It Does
+**EdQty** is a revolutionary learning tool designed to eliminate educational barriers for international students and individuals with learning disabilities. It combines cutting-edge technology with thoughtful accessibility features to create a truly inclusive learning environment.  
 
-What We Learned
-At the start, we had no shortage of ideas, each of us inspired by different angles and possibilities. Our brainstorming sessions were filled with excitement, and we had countless directions we could take. Through deep discussions and debates, we narrowed down our options, aiming for a project that was practical and impactful within the 24-hour timeframe. While we initially envisioned building something for a broad audience, we realized that we could create more value by focusing on a specific group and including thoughtful accessibility features. This shift in thinking allowed us to focus on creating something meaningful and highly relevant rather than trying to include every possible feature.
+### Key Features
+- **Real-Time Multilingual Translation, Captioning, and Summarization:**  
+  Instantly translates, captions, and summarizes videos, lectures, and other content into your preferred language for seamless understanding.
+  
+- **Interactive AI Q&A for Deeper Understanding:**  
+  Ask specific questions, request simplified explanations, or explore connections across topics interactively.
 
-Our team composition—two beginners and two intermediate coders—presented an interesting balance. The beginners tackled front-end development with tools like Figma, React, JavaScript, and CSS, learning to shape the visual and interactive elements of our project. Meanwhile, our intermediates, who initially had more experience in back-end development, quickly realized the challenges of building a complete, full-stack application. Integrating back-end functionality with a user-friendly front-end was no small feat, but it was a rewarding challenge that deepened our understanding of full-stack development.
+- **Saved Database of Summaries and Notes:**  
+  Organize and revisit study materials in a personal repository.
 
-Perhaps one of the most valuable lessons was the importance of teamwork. By dividing tasks based on our strengths and weaknesses, we created a learning environment where everyone could contribute and grow. Beginners gained technical skills and insights from the intermediates, while the intermediates often saw things from fresh perspectives when addressing questions from the beginners. Our collaborative approach allowed us to not only build a product but also foster a supportive space for learning, troubleshooting, and continuous feedback.
+- **Enhanced Note-Taking and Annotation:**  
+  Highlight key content, add personalized notes, and link directly to related materials.
 
-Throughout the development process, we also became more aware of our project’s potential impact. Every feature refinement required us to think carefully about our users’ needs and experiences. As we developed more targeted features and considered client accessibility, we felt a growing responsibility to create something that could genuinely enhance the learning experience for our audience.
+- **Daily Life and Social Assistance:**  
+  Real-time translations for menus, signs, and product labels with cultural insights to navigate new environments effortlessly.
 
-What's Next for EdQty
-The MVP we built in 24 hours is just the beginning. We’re excited to iterate on our initial product, making it more robust and user-friendly. Moving forward, we plan to enhance features like cultural translation accuracy to ensure our program resonates with diverse users. We’re also envisioning interactive tools, dynamic graphs, and seamless integrations with third-party education platforms like Quizlet and Zoom to make the learning experience more engaging.
+- **Time-Stamped Video Q&A:**  
+  Pause and engage with content at any specific timestamp to enhance learning and retention.
 
-Beyond feature development, we aim to conduct customer discovery to gain a deeper understanding of our users’ needs and preferences. Our goal is to build a tool that doesn’t just teach but makes learning easier and more enjoyable. Ultimately, we want EdQty to be a powerful, accessible resource for anyone looking to expand their knowledge and skills.
+- **Flashcards, Quizzes, and Adaptive Summaries:**  
+  Generate learning aids dynamically as you explore content, reinforcing understanding on the go.
 
-Built With
-css
-flask
-javascript
-llama
-ollama
-react
+- **Potential Additions:**  
+  Visualization aids for complex concepts through imagery and animations.
+
+---
+
+## 🛠️ How We Built It
+For our demo, we combined the power of modern AI with robust frameworks:
+- **Generative AI Models:**  
+  Used **LLaMA 3.2** for natural language processing and conversational AI, and **OpenAI's Whisper** for accurate audio-to-text conversion.
+  
+- **LangChain Framework:**  
+  Managed workflows and coordinated interactions between AI models.
+
+- **Database:**  
+  **MongoDB Atlas** served as our personalized learning data lake, storing uploaded materials and maintaining conversational context.
+
+- **Frontend and Backend:**  
+  Built a seamless, interactive experience using **React** (frontend) and **Flask** (backend).
+
+---
+
+## 💪 Challenges We Faced
+- **Steep Learning Curve:**  
+  None of us had prior experience with React, requiring us to learn and adapt on the fly.
+  
+- **Integration:**  
+  Connecting the front-end and back-end demanded patience, determination, and countless Google searches.
+
+- **Time Constraints:**  
+  Building a fully functional app in just 24 hours tested our endurance and creativity.
+
+---
+
+## 🏆 Accomplishments We’re Proud Of
+- **Full-Stack MVP:**  
+  From idea to a working demo in just 24 hours, solving a real-life problem.
+  
+- **Team Growth:**  
+  Every member, regardless of skill level, contributed and learned during the process.
+
+- **Accessibility Focus:**  
+  Created meaningful, targeted features to ensure inclusivity and support for diverse learners.
+
+---
+
+## 📚 What We Learned
+- **Teamwork is Key:**  
+  Dividing tasks by strengths and supporting each other fostered a collaborative, productive environment.
+
+- **User-Centered Design:**  
+  Thoughtful feature refinement made us deeply consider the needs and experiences of our audience.
+
+- **Full-Stack Development Skills:**  
+  Tackled the challenge of integrating front-end and back-end functionalities effectively.
+
+---
+
+## 🔮 What's Next for EdQty
+The MVP is just the beginning. Here's what we envision:
+- **Enhanced Cultural Translations:**  
+  Improve accuracy to resonate with a diverse global audience.
+  
+- **Interactive Features:**  
+  Add dynamic graphs, animations, and integrations with platforms like Quizlet and Zoom.
+
+- **User Discovery:**  
+  Conduct research to refine our understanding of user needs and preferences.
+
+- **Scaling and Optimization:**  
+  Make the app more robust, engaging, and accessible.
+
+Our ultimate goal is to build a tool that transforms learning into an inclusive, enjoyable, and effective experience for everyone.
+
+---
+
+## 💻 Getting Started
+To explore or contribute to EdQty, clone this repository and follow the setup instructions below:
+
+### Prerequisites
+- Node.js  
+- Python 3  
+- MongoDB Atlas account  
+- API keys for LLaMA 3.2, Whisper, and Ollama  
+
+### Installation
+1. Clone the repo:  
+   ```bash
+   git clone https://github.com/your-repo/edqty.git
+   cd edqty
+
+2. Install dependencies:
+
+Frontend:
+    ```bash
+    cd frontend
+    npm install
+Backend:
+    ```bash
+    cd backend
+    pip install -r requirements.txt
+
+3. Configure environment variables for API keys and MongoDB.
+
+4. Start the app:
+
+    ```bash
+    python app.py
+
+    ```bash
+    npm start
