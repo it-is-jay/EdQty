@@ -7,7 +7,7 @@ Making learning personal, accessible, and inclusive across learning disabilities
 - **Backend:** Flask  
 - **Database:** MongoDB Atlas  
 - **AI Models:** LLaMA 3.2, OpenAI Whisper  
-- **Frameworks:** LangChain, Ollama  
+- **Frameworks:** LangChain, Ollama, RAG  
 
 ---
 
